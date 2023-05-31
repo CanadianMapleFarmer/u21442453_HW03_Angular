@@ -1,0 +1,91 @@
+<div class="form-div">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> Add Product </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="productForm" (ngSubmit)="OnSubmit()">
+        <table>
+          <tr>
+            <mat-form-field class="register-input">
+              <mat-label>Name</mat-label>
+              <input
+                matInput
+                placeholder="Ex. Air Jordan 1"
+                formControlName="name"
+              />
+            </mat-form-field>
+          </tr>
+          <tr>
+            <mat-form-field class="register-input">
+              <mat-label>Price</mat-label>
+              <input
+                type="number"
+                matInput
+                placeholder="Ex 100.99"
+                formControlName="price"
+              />
+            </mat-form-field>
+          </tr>
+          <tr>
+            <mat-form-field class="register-input">
+              <mat-label>Brand</mat-label>
+              <mat-select
+                [(value)]="brandSelected"
+                formControlName="brandId"
+                matSelect
+              >
+                <mat-option
+                  *ngFor="let brand of brands"
+                  value="{{ brand.brandId }}"
+                  >{{ brand.name }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </tr>
+          <tr>
+            <mat-form-field class="register-input">
+              <mat-label>Product Type</mat-label>
+              <mat-select
+                [(value)]="typeSelected"
+                matSelect
+                formControlName="productTypeId"
+              >
+                <mat-option
+                  *ngFor="let type of productTypes"
+                  value="{{ type.productTypeId }}"
+                  >{{ type.name }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </tr>
+          <tr>
+            <mat-form-field class="register-input">
+              <mat-label>Description</mat-label>
+              <textarea
+                matInput
+                placeholder="Type description here..."
+                formControlName="description"
+              ></textarea>
+            </mat-form-field>
+          </tr>
+          <tr>
+            <input type="file" (change)="handleUpload($event)" />
+          </tr>
+          <tr>
+            <button
+              mat-raised-button
+              color="primary"
+              class="register-input"
+              type="submit"
+              accept=".jpg"
+              [disabled]="productForm.invalid"
+            >
+              Submit
+            </button>
+          </tr>
+        </table>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

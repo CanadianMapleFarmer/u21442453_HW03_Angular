@@ -1,0 +1,32 @@
+.form-div {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card-title {
+  color: white
+}
+
+mat-card {
+  height: auto;
+  width: auto;
+}
+
+.login-input {
+  min-width: 300px;
+  max-width: 500px;
+  width: 100%;
+}
+
+mat-card-actions {
+  color: white;
+  margin-left: 10px;
+}
+
+.reg-button {
+  max-height: 20px;
+  max-width: 80px;
+  margin-left: 5px;
+}

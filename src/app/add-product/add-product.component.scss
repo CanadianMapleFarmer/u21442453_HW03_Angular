@@ -1,0 +1,26 @@
+.form-div {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card-title {
+  color: white
+}
+
+mat-card {
+  height: auto;
+  width: auto;
+}
+
+.register-input {
+  min-width: 500px;
+  max-width: 700px;
+  width: 100%;
+}
+
+mat-card-actions {
+  color: white;
+  margin-left: 10px;
+}
